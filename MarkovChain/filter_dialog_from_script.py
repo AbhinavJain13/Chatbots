@@ -13,7 +13,6 @@ for line in textlines:
     # dialog
     elif line.startswith("                         "):
         dialoglines.append(line)
-    
 
 
 # Save the filtered lines
@@ -22,7 +21,8 @@ for line in textlines:
 outtext = ""
 for dialog in dialoglines:
     outtext += dialog
-    
+
+
 # Save to file
 with open("pulpfiction_dialog.txt", 'w') as f:
     f.write(outtext)
