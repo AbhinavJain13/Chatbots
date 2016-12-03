@@ -2,7 +2,7 @@
 
 # Roger bot
 
-import chatServer as c
+import timeoutingChatServer as c
 import random
 
 
@@ -32,7 +32,9 @@ def setup():
     numCounter = 5
     output("Hello, my name is Roger.")
     sleep(1)
-    output("What's up?")
+    output("Shall we talk?")
+    # 1. Simple delayed output:
+    outputWithDelay("Please?", 3)
 
 
 def response(input):
@@ -42,7 +44,20 @@ def response(input):
     elif respondToTrigger(input):
         pass
     else:
-        output(defaultRandomResponse())
+        default = defaultRandomResponse()
+        # 2a. more advanced delayed execution of callback function
+        delayedCallback(4, repeatImpatiently)
+        output(default)
+
+
+# 2b. For 2a.) to work, we need a function with that name
+#     (repeatImpatiently).
+def repeatImpatiently():
+    # 3. The use of a callback function allows us to do more
+    # complex behavior, like call the `delayedCallback` again
+    # from our callback. This will keep on repeating.
+    delayedCallback(5, repeatImpatiently)
+    output("Over?")
 
 
 def defaultRandomResponse():
