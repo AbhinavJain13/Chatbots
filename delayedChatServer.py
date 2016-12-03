@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# timeoutingChatServer.py
+# delayedChatServer.py
 
 # Command Line Interface (CLI) version
 
@@ -8,7 +8,7 @@ import time
 import signal
 # from contextlib import contextmanager
 
-import rogerbot as bot
+import delayedRogerbot as bot
 
 
 # Chat Server Framework functions

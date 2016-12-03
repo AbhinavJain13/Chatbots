@@ -2,7 +2,7 @@
 
 # Roger bot
 
-import timeoutingChatServer as c
+import delayedChatServer as c
 import random
 
 
