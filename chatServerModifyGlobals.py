@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# chatServerModifyGlobals.py
+
 # Command Line Interface (CLI) version
 
 import os
